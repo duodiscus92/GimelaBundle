@@ -1,0 +1,161 @@
+<?php
+
+namespace DJET\GimelaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Aeronef
+ *
+ * @ORM\Table(name="gml_aeronef")
+ * @ORM\Entity(repositoryClass="DJET\GimelaBundle\Entity\AeronefRepository")
+ */
+class Aeronef
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="aero_date", type="datetime")
+     */
+    private $aeroDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aero_type", type="string", length=255)
+     */
+    private $aeroType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aero_immat", type="string", length=255)
+     */
+    private $aeroImmat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aero_statut", type="integer")
+     */
+    private $aeroStatut;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aero_envol", type="integer")
+     */
+    private $aeroEnvol;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set aeroType
+     *
+     * @param string $aeroType
+     * @return Aeronef
+     */
+    public function setAeroType($aeroType)
+    {
+        $this->aeroType = $aeroType;
+
+        return $this;
+    }
+
+    /**
+     * Get aeroType
+     *
+     * @return string 
+     */
+    public function getAeroType()
+    {
+        return $this->aeroType;
+    }
+
+    /**
+     * Set aeroImmat
+     *
+     * @param string $aeroImmat
+     * @return Aeronef
+     */
+    public function setAeroImmat($aeroImmat)
+    {
+        $this->aeroImmat = $aeroImmat;
+
+        return $this;
+    }
+
+    /**
+     * Get aeroImmat
+     *
+     * @return string 
+     */
+    public function getAeroImmat()
+    {
+        return $this->aeroImmat;
+    }
+
+    /**
+     * Set aeroStatut
+     *
+     * @param integer $aeroStatut
+     * @return Aeronef
+     */
+    public function setAeroStatut($aeroStatut)
+    {
+        $this->aeroStatut = $aeroStatut;
+
+        return $this;
+    }
+
+    /**
+     * Get aeroStatut
+     *
+     * @return integer 
+     */
+    public function getAeroStatut()
+    {
+        return $this->aeroStatut;
+    }
+
+    /**
+     * Set aeroEnvol
+     *
+     * @param integer $aeroEnvol
+     * @return Aeronef
+     */
+    public function setAeroEnvol($aeroEnvol)
+    {
+        $this->aeroEnvol = $aeroEnvol;
+
+        return $this;
+    }
+
+    /**
+     * Get aeroEnvol
+     *
+     * @return integer 
+     */
+    public function getAeroEnvol()
+    {
+        return $this->aeroEnvol;
+    }
+}

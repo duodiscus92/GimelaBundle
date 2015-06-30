@@ -1,0 +1,197 @@
+<?php
+
+namespace DJET\GimelaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="gml_user")
+ * @ORM\Entity(repositoryClass="DJET\GimelaBundle\Entity\UserRepository")
+ */
+class User
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="usr_date", type="datetime")
+     */
+    private $usrDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_nom", type="string", length=255)
+     */
+    private $usrNom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_prenom", type="string", length=255)
+     */
+    private $usrPrenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_login", type="string", length=255)
+     */
+    private $usrLogin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_mdp", type="string", length=255)
+     */
+    private $usrMdp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_mail", type="string", length=255)
+     */
+    private $usrMail;
+
+    /**
+
+     * @ORM\OneToOne(targetEntity="DJET\GimelaBundle\Entity\Statut", cascade={"persist"})
+
+     */
+    private $statut;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set usrNom
+     *
+     * @param string $usrNom
+     * @return User
+     */
+    public function setUsrNom($usrNom)
+    {
+        $this->usrNom = $usrNom;
+
+        return $this;
+    }
+
+    /**
+     * Get usrNom
+     *
+     * @return string 
+     */
+    public function getUsrNom()
+    {
+        return $this->usrNom;
+    }
+
+    /**
+     * Set usrPrenom
+     *
+     * @param string $usrPrenom
+     * @return User
+     */
+    public function setUsrPrenom($usrPrenom)
+    {
+        $this->usrPrenom = $usrPrenom;
+
+        return $this;
+    }
+
+    /**
+     * Get usrPrenom
+     *
+     * @return string 
+     */
+    public function getUsrPrenom()
+    {
+        return $this->usrPrenom;
+    }
+
+    /**
+     * Set usrLogin
+     *
+     * @param string $usrLogin
+     * @return User
+     */
+    public function setUsrLogin($usrLogin)
+    {
+        $this->usrLogin = $usrLogin;
+
+        return $this;
+    }
+
+    /**
+     * Get usrLogin
+     *
+     * @return string 
+     */
+    public function getUsrLogin()
+    {
+        return $this->usrLogin;
+    }
+
+    /**
+     * Set usrMdp
+     *
+     * @param string $usrMdp
+     * @return User
+     */
+    public function setUsrMdp($usrMdp)
+    {
+        $this->usrMdp = $usrMdp;
+
+        return $this;
+    }
+
+    /**
+     * Get usrMdp
+     *
+     * @return string 
+     */
+    public function getUsrMdp()
+    {
+        return $this->usrMdp;
+    }
+
+    /**
+     * Set usrMail
+     *
+     * @param string $usrMail
+     * @return User
+     */
+    public function setUsrMail($usrMail)
+    {
+        $this->usrMail = $usrMail;
+
+        return $this;
+    }
+
+    /**
+     * Get usrMail
+     *
+     * @return string 
+     */
+    public function getUsrMail()
+    {
+        return $this->usrMail;
+    }
+}
