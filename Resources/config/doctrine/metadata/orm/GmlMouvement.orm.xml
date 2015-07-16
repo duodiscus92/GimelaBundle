@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="GmlMouvement" table="gml_mouvement">
+    <unique-constraints>
+      <unique-constraint name="UNIQ_6580C6C8A76ED395" columns="mvt_createur"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="mvtDate" type="datetime" column="mvt_date" nullable="false"/>
+    <field name="mvtDebit" type="decimal" column="mvt_debit" precision="10" scale="2" nullable="false"/>
+    <field name="mvtCredit" type="decimal" column="mvt_credit" precision="10" scale="2" nullable="false"/>
+    <field name="mvtOperationId" type="integer" column="mvt_operation_id" nullable="false"/>
+    <field name="mvtCompteId" type="integer" column="mvt_compte_id" nullable="false"/>
+    <field name="mvtComment" type="string" column="mvt_comment" length="255" nullable="false"/>
+    <many-to-one field="mvtCreateur" target-entity="GmlUser">
+      <join-columns>
+        <join-column name="mvt_createur" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

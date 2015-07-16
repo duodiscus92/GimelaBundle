@@ -1,0 +1,58 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+	Menu principal de GIMELA
+{% endblock %}
+
+{#{{ knp_menu_render('DJETGimelaBundle:Builder:mainMenu') }}#}
+{##}
+{% block raccourci %}
+        <a class="btn btn-primary btn-lg" href="#">
+          Raccourci pour consulter son compte vol
+	</a>
+{% endblock %}
+{##}
+
+{% block menu0 %}
+	<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Membres
+    		<span class="caret"></span>
+		</a>
+    		<ul class="dropdown-menu">
+      			<li><a href="#">Consulter son compte</a></li>
+    		</ul>
+  	</li>	
+	<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestionnaires
+    		<span class="caret"></span>
+		</a>
+    		<ul class="dropdown-menu">
+      			<li><a href="#">Consulter/modifier les comptes vols</a></li>
+      			<li><a href="#">Créer un mouvement</a></li>
+      			<li><a href="#">Consulter/modifier/supprimer des mouvements</a></li>
+    		</ul>
+  	</li>	
+	<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Administrateurs
+    		<span class="caret"></span>
+		</a>
+    		<ul class="dropdown-menu">
+      			<li><a href="#">Création rapide d'un membre</a></li>
+      			<li><a href="{{ path('aeronef_ajoute', {'createur' : app.request.session.get('login') }) }}">Créer un aéronef</a></li>
+      			<li><a href="{{ path('aeronef_list') }}">Consulter/modifier/supprimer des aéronefs</a></li>
+      			<li><a href="#">Créer un tarif</a></li>
+      			<li><a href="#">Consulter/modifier/supprimer des tarifs</a></li>
+      			<li><a href="#">Consulter/modifier le statut d'un membre</a></li>
+    		</ul>
+  	</li>	
+	<li><a href="#">Quitter</a></li>
+{% endblock %}
+
+{% block id_statut %}
+<p>Vous êtes au Centre de Vol à Voile de Fontainebleau et de sa Région (CVVFR)</p>
+<p>Votre identifiant est <b>{{app.request.session.get('login')}}</b>. Votre statut est <b>{{app.request.session.get('statut')}}</b></p> 
+{% endblock %}
+
+{% block body %}
+<h1> Selectionnez une action dans les menus ci-dessus</h1>
+{% endblock %}

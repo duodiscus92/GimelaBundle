@@ -1,0 +1,248 @@
+<?php
+
+namespace DJET\GimelaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * GmlMouvement
+ *
+ * @ORM\Table(name="gml_mouvement", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_6580C6C8A76ED395", columns={"mvt_createur"})})
+ * @ORM\Entity
+ */
+class GmlMouvement
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="mvt_date", type="datetime", nullable=false)
+     */
+    private $mvtDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mvt_debit", type="decimal", precision=10, scale=2, nullable=false)
+     */
+    private $mvtDebit;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mvt_credit", type="decimal", precision=10, scale=2, nullable=false)
+     */
+    private $mvtCredit;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mvt_operation_id", type="integer", nullable=false)
+     */
+    private $mvtOperationId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mvt_compte_id", type="integer", nullable=false)
+     */
+    private $mvtCompteId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mvt_comment", type="string", length=255, nullable=false)
+     */
+    private $mvtComment;
+
+    /**
+     * @var \GmlUser
+     *
+     * @ORM\ManyToOne(targetEntity="GmlUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="mvt_createur", referencedColumnName="id")
+     * })
+     */
+    private $mvtCreateur;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set mvtDate
+     *
+     * @param \DateTime $mvtDate
+     * @return GmlMouvement
+     */
+    public function setMvtDate($mvtDate)
+    {
+        $this->mvtDate = $mvtDate;
+
+        return $this;
+    }
+
+    /**
+     * Get mvtDate
+     *
+     * @return \DateTime 
+     */
+    public function getMvtDate()
+    {
+        return $this->mvtDate;
+    }
+
+    /**
+     * Set mvtDebit
+     *
+     * @param string $mvtDebit
+     * @return GmlMouvement
+     */
+    public function setMvtDebit($mvtDebit)
+    {
+        $this->mvtDebit = $mvtDebit;
+
+        return $this;
+    }
+
+    /**
+     * Get mvtDebit
+     *
+     * @return string 
+     */
+    public function getMvtDebit()
+    {
+        return $this->mvtDebit;
+    }
+
+    /**
+     * Set mvtCredit
+     *
+     * @param string $mvtCredit
+     * @return GmlMouvement
+     */
+    public function setMvtCredit($mvtCredit)
+    {
+        $this->mvtCredit = $mvtCredit;
+
+        return $this;
+    }
+
+    /**
+     * Get mvtCredit
+     *
+     * @return string 
+     */
+    public function getMvtCredit()
+    {
+        return $this->mvtCredit;
+    }
+
+    /**
+     * Set mvtOperationId
+     *
+     * @param integer $mvtOperationId
+     * @return GmlMouvement
+     */
+    public function setMvtOperationId($mvtOperationId)
+    {
+        $this->mvtOperationId = $mvtOperationId;
+
+        return $this;
+    }
+
+    /**
+     * Get mvtOperationId
+     *
+     * @return integer 
+     */
+    public function getMvtOperationId()
+    {
+        return $this->mvtOperationId;
+    }
+
+    /**
+     * Set mvtCompteId
+     *
+     * @param integer $mvtCompteId
+     * @return GmlMouvement
+     */
+    public function setMvtCompteId($mvtCompteId)
+    {
+        $this->mvtCompteId = $mvtCompteId;
+
+        return $this;
+    }
+
+    /**
+     * Get mvtCompteId
+     *
+     * @return integer 
+     */
+    public function getMvtCompteId()
+    {
+        return $this->mvtCompteId;
+    }
+
+    /**
+     * Set mvtComment
+     *
+     * @param string $mvtComment
+     * @return GmlMouvement
+     */
+    public function setMvtComment($mvtComment)
+    {
+        $this->mvtComment = $mvtComment;
+
+        return $this;
+    }
+
+    /**
+     * Get mvtComment
+     *
+     * @return string 
+     */
+    public function getMvtComment()
+    {
+        return $this->mvtComment;
+    }
+
+    /**
+     * Set mvtCreateur
+     *
+     * @param \DJET\GimelaBundle\Entity\GmlUser $mvtCreateur
+     * @return GmlMouvement
+     */
+    public function setMvtCreateur(\DJET\GimelaBundle\Entity\GmlUser $mvtCreateur = null)
+    {
+        $this->mvtCreateur = $mvtCreateur;
+
+        return $this;
+    }
+
+    /**
+     * Get mvtCreateur
+     *
+     * @return \DJET\GimelaBundle\Entity\GmlUser 
+     */
+    public function getMvtCreateur()
+    {
+        return $this->mvtCreateur;
+    }
+}

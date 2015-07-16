@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="GmlPlanche" table="gml_planche">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="plDate" type="date" column="pl_date" nullable="false"/>
+    <field name="plHd" type="time" column="pl_hd" nullable="false"/>
+    <field name="plHa" type="time" column="pl_ha" nullable="false"/>
+    <field name="plImmatPlaneur" type="string" column="pl_immat_planeur" length="10" nullable="false"/>
+    <field name="plImmatRem" type="string" column="pl_immat_rem" length="10" nullable="false"/>
+    <field name="plDvr" type="integer" column="pl_dvr" nullable="false"/>
+    <field name="pl1erPil" type="string" column="pl_1er_pil" length="100" nullable="false"/>
+    <field name="pl2emPil" type="string" column="pl_2em_pil" length="100" nullable="false"/>
+    <field name="plTypvol" type="string" column="pl_typvol" length="50" nullable="false"/>
+    <field name="plCod1erPil" type="integer" column="pl_cod_1er_pil" nullable="false"/>
+    <field name="plCod2emPil" type="integer" column="pl_cod_2em_pil" nullable="false"/>
+  </entity>
+</doctrine-mapping>

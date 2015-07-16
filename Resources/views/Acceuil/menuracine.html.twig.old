@@ -1,0 +1,29 @@
+<h1>Menu principal de GIMELA</h1>
+
+{#{{ knp_menu_render('DJETGimelaBundle:Builder:mainMenu') }}#}
+
+<li>Votre identifiant est <b>{{ login }}</b>. Votre statut est <b>{{ login_statut }}</b> </li>
+
+<h2>Opérations autorisées uniquement aux membres, gestionnaires et administrateurs</h2>
+<ul>
+	<li>{# <a href="{{ path('r_compte') }}"> #}Consulter son propre compte vol</a></li>
+</ul>
+<h2>Opérations autorisées uniquement aux gestionnaires et administrateurs</h2>
+<ul>
+	<li>{#<a href="{{ path('rw_comptes') }}"> #}Consulter/modifier les comptes vol</a></li>
+	<li>{#<a href="{{ path('rw_mouv') }}"> #}Consulter/Modifier/Créer/Supprimer des mouvements</a></li>
+</ul>
+<h2>Opérations autorisées uniquement aux administrateurs </h2>
+<ul>
+	<li>{#<a href="{{ path('rw_membre') }}"> #}Creation rapide d'un membre</a></li>
+	<li>	<a href="{{ path('aeronef_list') }}">Consulter-Modifier-Supprimer</a> /
+		<a href="{{ path('aeronef_ajoute',{'createur':login }) }}">Créer</a>
+		 un aeronef
+	</li>
+	<li>{#<a href="{{ path('rw_tarif') }}"> #}Consulter/Modifier/Créer/Supprimer un tarif</a></li>
+	<li>{#<a href="{{ path('rw_statut') }}"> #}Consulter/Modifier le statut d'un membre</a></li>
+</ul>
+<h2>Opérations autorisées à tous </h2>
+<ul>
+	<li>{#<a href="{{ path('quitter') }}"> #}Quitter GIMELA</a></li>
+</ul>

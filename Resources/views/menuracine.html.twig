@@ -1,0 +1,36 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+	Menu principal de GIMELA
+{% endblock %}
+
+{#{{ knp_menu_render('DJETGimelaBundle:Builder:mainMenu') }}#}
+
+{##}
+{% block menu1 %}
+<h2>Accès membres</h2>
+<h3><li>{# <a href="{{ path('r_compte') }}"> #}Consulter son propre compte vol</a></li></h3>
+
+<h2>Accès gestionnaires</h2>
+<h3><li>{#<a href="{{ path('rw_comptes') }}"> #}Consulter/modifier les comptes vol</a></li></h3>
+<h3><li>{#<a href="{{ path('rw_mouv') }}"> #}Consulter/Modifier/Créer/Supprimer des mouvements</a></li></h3>
+
+<h2>Accès administrateurs<h2>
+<h3><li>{#<a href="{{ path('rw_membre') }}"> #}Creation rapide d'un membre</a></li></h3>
+<h3><li><a href="{{ path('aeronef_list') }}">Consulter-Modifier-Supprimer</a> /
+	<a href="{{ path('aeronef_ajoute',{'createur':login }) }}">Créer</a> un aeronef
+</li></h3>
+<h3><li>{#<a href="{{ path('rw_tarif') }}"> #}Consulter/Modifier/Créer/Supprimer un tarif</a></li></h3>
+<h3><li>{#<a href="{{ path('rw_statut') }}"> #}Consulter/Modifier le statut d'un membre</a></li></h3>
+
+<h2>{#<a href="{{ path('quitter') }}"> #}Quitter GIMELA</a></h2>
+{% endblock %}
+{##}
+
+{% block id_statut %}
+Votre identifiant est <b>{{ login }}</b>. Votre statut est <b>{{ login_statut }}</b> 
+{% endblock %}
+
+{% block body %}
+<h1> Gimela is for you ! </h1>
+{% endblock %}

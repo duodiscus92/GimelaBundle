@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="GmlAeronef" table="gml_aeronef">
+    <indexes>
+      <index name="aero_createur" columns="aero_createur"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="aeroDate" type="datetime" column="aero_date" nullable="false"/>
+    <field name="aeroType" type="string" column="aero_type" length="255" nullable="false"/>
+    <field name="aeroImmat" type="string" column="aero_immat" length="255" nullable="false"/>
+    <field name="aeroStatut" type="boolean" column="aero_statut" nullable="false"/>
+    <field name="aeroEnvol" type="boolean" column="aero_envol" nullable="false"/>
+    <many-to-one field="aeroCreateur" target-entity="GmlUser">
+      <join-columns>
+        <join-column name="aero_createur" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

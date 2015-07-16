@@ -1,0 +1,66 @@
+{% extends 'DJETGimelaBundle:Acceuil:menuracine.html.twig' %} 
+{% block body %}
+<h3>{{form_titre}}</h3>
+
+<div class="well">
+  {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    {# Champ Date #}
+    <div class="form-group">
+      {{ form_label(form.aeroDate, "Date création", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.aeroDate) }}
+      <div class="col-sm-3">
+        {{ form_widget(form.aeroDate, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+    {# Champ type #}
+    <div class="form-group">
+      {{ form_label(form.aeroType, "Type", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.aeroType) }}
+      <div class="col-sm-3">
+        {{ form_widget(form.aeroType, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+    {# Champ Immat #}
+    <div class="form-group">
+      {{ form_label(form.aeroImmat, "Immatriculation", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.aeroImmat) }}
+      <div class="col-sm-3">
+        {{ form_widget(form.aeroImmat, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+    {# Champ Statut #}
+    <div class="form-group">
+      {{ form_label(form.aeroStatut, "Remorqueur", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.aeroStatut) }}
+      <div class="col-sm-3">
+        {{ form_widget(form.aeroStatut, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+    {# Champ Envol #}
+    <div class="form-group">
+      {{ form_label(form.aeroEnvol, "Envol incorpooré", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.aeroEnvol) }}
+      <div class="col-sm-3">
+        {{ form_widget(form.aeroEnvol, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+    {# Le bouton de validation du filtre #}
+    <div class="form-group">
+	{{ form_widget(form.Créer, {'attr': {'class': 'col-sm-2 btn btn-primary'}}) }}
+        <div class="col-sm-4">
+	  {{ form_widget(form.Annuler, {'attr': {'class': 'col-sm-6 btn btn-primary'}}) }}
+        </div>
+    </div>
+  {# Fermeture de la balise <form> du formulaire HTML #}
+  {{ form_end(form) }}
+</div>
+{% endblock %}

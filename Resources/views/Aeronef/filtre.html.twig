@@ -1,0 +1,38 @@
+{% extends 'DJETGimelaBundle:Acceuil:menuracine.html.twig' %} 
+{% block body %}
+<h3>{{form_titre}}</h3>
+
+<div class="well">
+  {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+      {# Génération du label. #}
+      {{ form_label(form.Remorqueur, "Remorqueur", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+      {# Affichage des erreurs pour ce champ précis. #}
+      {{ form_errors(form.Remorqueur) }}
+
+      <div class="col-sm-3">
+        {# Génération de l'input. #}
+        {{ form_widget(form.Remorqueur, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+    {# Idem pour un autre champ. #}
+    <div class="form-group">
+      {{ form_label(form.Planeur, "Planeur pur", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.Planeur) }}
+      <div class="col-sm-3">
+        {{ form_widget(form.Planeur, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+    {# Le bouton de validation du filtre #} 
+    {{ form_widget(form.Filtrer, {'attr': {'class': 'btn btn-primary'}}) }}
+
+  {# Fermeture de la balise <form> du formulaire HTML #}
+  {{ form_end(form) }}
+</div>
+{% endblock %}

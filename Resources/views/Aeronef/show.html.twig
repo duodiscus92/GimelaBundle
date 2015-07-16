@@ -1,0 +1,19 @@
+{% extends 'DJETGimelaBundle:Acceuil:menuracine.html.twig' %} 
+{% block body %}
+    <h3>{{titre_page}}</h3>
+
+    <p>
+      {# On affiche tous les messages flash dont le nom est « info » #}
+      {% for message in app.session.flashbag.get('info') %}
+      {#  <p>Message flash : {{ immat }}</p> #}
+      {% endfor %}
+    </p>
+
+    <p>
+      L'aeronef  dont les caractéristiques suivent {{operation}} par <b>{{app.request.session.get('login')}}</b> dans la base de données<br />
+      Type : {{ type }}<br />
+      Immatriculation : {{ immat }}<br />
+      Statut : {{ statut }}<br />
+      Dispositif d'envol : {{ envol }}<br />
+    </p>
+{% endblock %}

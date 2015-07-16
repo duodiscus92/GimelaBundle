@@ -1,0 +1,31 @@
+djet_gimela_home:
+    path:      /{page}
+    defaults:  { _controller: DJETGimelaBundle:Aeronef:index, page: 1 }
+    requirements:
+        page: \d*
+        
+djet_gimela_acceuil:
+    path:      /acceuil
+    defaults:  { _controller: DJETGimelaBundle:Acceuil:menuracine }
+    requirements:
+        id: \d+
+        
+djet_gimela_add:
+    path:      /add
+    defaults:  { _controller: DJETGimelaBundle:Aeronef:add }
+    
+djet_gimela_list:
+    path:      /list
+    defaults:  { _controller: DJETGimelaBundle:Aeronef:list }
+    
+djet_gimela_edit:
+    path:      /edit/{id}
+    defaults:  { _controller: DJETGimelaBundle:Aeronef:edit }
+    requirements:
+        id: \d+
+        
+djet_gimela_delete:
+    path:      /delete/{id}
+    defaults:  { _controller: DJETGimelaBundle:Aeronef:delete }
+    requirements:
+        id: \d+ 

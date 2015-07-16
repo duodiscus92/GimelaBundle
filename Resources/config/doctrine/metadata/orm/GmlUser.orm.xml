@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="GmlUser" table="gml_user">
+    <unique-constraints>
+      <unique-constraint name="UNIQ_3CCFC580F6203804" columns="usr_statut"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="usrDate" type="datetime" column="usr_date" nullable="false"/>
+    <field name="usrNom" type="string" column="usr_nom" length="255" nullable="false"/>
+    <field name="usrPrenom" type="string" column="usr_prenom" length="255" nullable="false"/>
+    <field name="usrLogin" type="string" column="usr_login" length="255" nullable="false"/>
+    <field name="usrMdp" type="string" column="usr_mdp" length="255" nullable="false"/>
+    <field name="usrMail" type="string" column="usr_mail" length="255" nullable="false"/>
+    <field name="usrCodcvvfr" type="integer" column="usr_codcvvfr" nullable="false"/>
+    <field name="usrCodffvv" type="integer" column="usr_codffvv" nullable="false"/>
+    <field name="usrForfait" type="boolean" column="usr_forfait" nullable="false"/>
+    <field name="usrAneg" type="boolean" column="usr_aneg" nullable="false"/>
+    <many-to-one field="usrStatut" target-entity="GmlStatut">
+      <join-columns>
+        <join-column name="usr_statut" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
